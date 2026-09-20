@@ -2,7 +2,7 @@
 layout: post
 title: "0006_ZigZag_Conversion"
 subtitle: '0006_ZigZag_Conversion'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - leetcode

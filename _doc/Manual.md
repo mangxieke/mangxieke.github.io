@@ -58,8 +58,8 @@ SEOTitle: Hux Blog          # check out docs for more detail
 description: "Cool Blog"    # ...
 
 # SNS settings      
-github_username: taomujian     # modify this account to yours
-weibo_username: taomujian     # the footer woule be auto-updated.
+github_username: mangxieke     # modify this account to yours
+weibo_username: mangxieke     # the footer woule be auto-updated.
 
 # Build settings
 paginate: 10                # nums of posts in one page
@@ -294,7 +294,7 @@ Shout out to [@kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-
 
 - Feeling annoyed to delete my blog post after clone or pull? Try **Boilerplate (Beta)** to help you get started quickly and easily merge update.
 - `-apple-system` is added in font rule, which display beautiful new font **San Francisco** in iOS 9 by default.
-- Fixed [issue#15](https://github.com/Huxpro/taomujian.github.io/issues/15) about code wrap.
+- Fixed [issue#15](https://github.com/Huxpro/mangxieke.github.io/issues/15) about code wrap.
 
 #### V1.5.1
 

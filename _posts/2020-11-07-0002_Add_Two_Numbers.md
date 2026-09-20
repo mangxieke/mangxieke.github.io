@@ -2,7 +2,7 @@
 layout: post
 title: "0002__Add_Two_Numbers"
 subtitle: '0002__Add_Two_Numbers'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - leetcode

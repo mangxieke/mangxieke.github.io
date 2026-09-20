@@ -2,7 +2,7 @@
 layout: post
 title: "0003_Longest_Substring_Without_Repeating_Characters"
 subtitle: '0003_Longest_Substring_Without_Repeating_Characters'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - leetcode

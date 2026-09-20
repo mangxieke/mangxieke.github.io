@@ -2,7 +2,7 @@
 layout: post
 title: "0004_Median_of_Two_Sorted_Arrays"
 subtitle: '0004_Median_of_Two_Sorted_Arrays'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - leetcode

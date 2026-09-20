@@ -2,7 +2,7 @@
 layout: post
 title: "MSF_Meterpreter_Traffic_Parser"
 subtitle: 'MSF_Meterpreter_Traffic_Parser'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - MSF

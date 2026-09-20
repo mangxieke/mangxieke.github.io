@@ -1,14 +1,14 @@
 {
-    "name": "taomujian-blog",
-    "title": "Taomujian Blog",
-    "author": "Taomujian <taomujian@protonmail.com>",
+    "name": "mangxieke-blog",
+    "title": "Mangxieke Blog",
+    "author": "Mangxieke <mangxieke@protonmail.com>",
     "version": "1.8.2",
-    "homepage": "http://taomujian.github.io",
+    "homepage": "http://mangxieke.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/taomujian/taomujian.github.io"
+        "url": "https://github.com/mangxieke/mangxieke.github.io"
     },
-    "bugs": "https://github.com/taomujian/taomujian.github.io/issues",
+    "bugs": "https://github.com/mangxieke/mangxieke.github.io/issues",
     "devDependencies": {
         "grunt": ">=1.3.0",
         "grunt-banner": "~0.2.3",

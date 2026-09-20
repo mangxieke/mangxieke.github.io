@@ -44,13 +44,13 @@ Other Resources
 
 Ports
 - [**Hexo**](https://github.com/Kaijun/hexo-theme-huxblog) by @kaijun
-- [**React-SSR**](https://github.com/LucasIcarus/taomujian.github.io/tree/ssr) by @LucasIcarus
+- [**React-SSR**](https://github.com/LucasIcarus/mangxieke.github.io/tree/ssr) by @LucasIcarus
 
-[Starter/Boilerplate](https://github.com/taomujian/taomujianblog-boilerplate)
+[Starter/Boilerplate](https://github.com/mangxieke/mangxiekeblog-boilerplate)
 - Out of date. Helps wanted for updating it on par with the main repo
 
 Translation
-- [🇨🇳  中文文档（有点过时）](https://github.com/taomujian/taomujian.github.io/blob/master/_doc/README.zh.md)
+- [🇨🇳  中文文档（有点过时）](https://github.com/mangxieke/mangxieke.github.io/blob/master/_doc/README.zh.md)
 
 
 License

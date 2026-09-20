@@ -2,7 +2,7 @@
 layout: post
 title: "0005_Longest_Palindromic_Substring"
 subtitle: '0005_Longest_Palindromic_Substring'
-author: "taomujian"
+author: "mangxieke"
 header-style: text
 tags:
   - leetcode
